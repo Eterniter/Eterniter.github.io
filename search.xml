@@ -31,31 +31,6 @@
     
     
     <entry>
-      <title>数据库原理之候选码的求解</title>
-      <link href="/2022/07/10/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/"/>
-      <url>/2022/07/10/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/</url>
-      
-        <content type="html"><![CDATA[<h2 id="属性的分类"><a href="#属性的分类" class="headerlink" title="属性的分类"></a>属性的分类</h2><p>R(A1，A2，…，An)和函数依赖集F，属性分4类<br>L类：仅出现在F的函数依赖左部的属性<br>R类：仅出现在F的函数依赖右部的属性<br>N类：在F的函数依赖两边均未出现的属性<br>LR类：在F的函数依赖两边均出现的属性</p><hr><h2 id="预备知识："><a href="#预备知识：" class="headerlink" title="预备知识："></a>预备知识：</h2><p>对于给定的关系模式R及其函数依赖集F，</p><p>1.如果X（X∈R）是L类属性，则X必为任一候选码的成员。更进一步，如果X关于F的闭包包含了R的全部属性，则X必为R的唯一候选码。（由此可见一些题目的候选码并不唯一）</p><p>2.如果X是R类属性，则X不在任何候选码中。</p><p>3.如果X是N类属性，则X必定在任一候选码中。正因为X是N类属性在F的函数依赖两边都不出现，所以N类和L类组成的函数集关于F的闭包才能包含R的全部属性，即如果N类和L类组成的函数集关于F的闭包包含R的全部属性，则X必为唯一候选码。</p><hr><h2 id="候选码求解的方法："><a href="#候选码求解的方法：" class="headerlink" title="候选码求解的方法："></a>候选码求解的方法：</h2><p>(1).找出L类属性和N类属性 例如：AB</p><p>然后判断AB关于F的闭包是否包含R的全部属性，若包含，则AB必为唯一的候选码，后面的都不用看了</p><p>(2).找出LR类属性 例如 C，D</p><p>(3).将1和2中找到的属性进行组合，例如 ABC和ABD</p><p>然后分别求其闭包,如果包含R的全部属性，即为候选码。如果都包含的话，则都是候选码。（也就是候选码不唯一）</p><hr><h2 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h2><p>(1).R(X,Y,Z) F=(XY→Z)</p><p>首先找出L类属性XY，无N类属性，</p><p>求XY关于F的闭包为XYZ，包含R的全部属性，</p><p>则R的候选码为XY</p><hr><p>(2).R(X,Y,Z) F=(Y→Z，XZ→Y)</p><p>L类属性:X，无N类属性，</p><p>求X关于F的闭包为X，不包含R的全部属性，</p><p>继续找LR类属性:Y、Z</p><p>XY关于F的闭包为XYZ,包含R的全部属性</p><p>XZ关于F的闭包为XYZ,包含R的全部属性</p><p>所以R的候选码为XY和XZ.(R中所有属性X,Y,Z都是主属性)</p><hr><p>(3).R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</p><p>无L类属性，无N类属性，</p><p>继续找LR类属性:X、Y、Z</p><p>X关于F的闭包为XYZ,包含R的全部属性</p><p>Y关于F的闭包为XYZ,包含R的全部属性</p><p>Z关于F的闭包为Z,不包含R的全部属性</p><p>所以R的候选码为X和Y.</p><hr><p>(4).R(X,Y,Z) F=(X→Y，X→Z)</p><p>L类属性:X，无N类属性，</p><p>X关于F的闭包为XYZ,包含R的全部属性</p><p>所以R的候选码为X.</p><hr><p>(5).R(W,X,Y,Z) F=(X→Z,WX→Y)</p><p>L类属性:WX，无N类属性，</p><p>WX关于F的闭包为WXYZ,包含R的全部属性</p><p>所以R的候选码为WX.</p><hr><p>(6).R(W,X,Y,Z) F=(X→Z,X→Y)</p><p>L类属性:X，N类属性:W，</p><p>WX关于F的闭包为WXYZ,包含R的全部属性</p><p>所以R的候选码为WX.</p><hr>]]></content>
-      
-      
-      <categories>
-          
-          <category> database </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> database </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hugo添加Algolia搜索</title>
       <link href="/2022/07/10/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/"/>
       <url>/2022/07/10/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/</url>
@@ -75,6 +50,31 @@
             <tag> hugo </tag>
             
             <tag> algolia </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>数据库原理之候选码的求解</title>
+      <link href="/2022/07/10/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/"/>
+      <url>/2022/07/10/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="属性的分类"><a href="#属性的分类" class="headerlink" title="属性的分类"></a>属性的分类</h2><p>R(A1，A2，…，An)和函数依赖集F，属性分4类<br>L类：仅出现在F的函数依赖左部的属性<br>R类：仅出现在F的函数依赖右部的属性<br>N类：在F的函数依赖两边均未出现的属性<br>LR类：在F的函数依赖两边均出现的属性</p><hr><h2 id="预备知识："><a href="#预备知识：" class="headerlink" title="预备知识："></a>预备知识：</h2><p>对于给定的关系模式R及其函数依赖集F，</p><p>1.如果X（X∈R）是L类属性，则X必为任一候选码的成员。更进一步，如果X关于F的闭包包含了R的全部属性，则X必为R的唯一候选码。（由此可见一些题目的候选码并不唯一）</p><p>2.如果X是R类属性，则X不在任何候选码中。</p><p>3.如果X是N类属性，则X必定在任一候选码中。正因为X是N类属性在F的函数依赖两边都不出现，所以N类和L类组成的函数集关于F的闭包才能包含R的全部属性，即如果N类和L类组成的函数集关于F的闭包包含R的全部属性，则X必为唯一候选码。</p><hr><h2 id="候选码求解的方法："><a href="#候选码求解的方法：" class="headerlink" title="候选码求解的方法："></a>候选码求解的方法：</h2><p>(1).找出L类属性和N类属性 例如：AB</p><p>然后判断AB关于F的闭包是否包含R的全部属性，若包含，则AB必为唯一的候选码，后面的都不用看了</p><p>(2).找出LR类属性 例如 C，D</p><p>(3).将1和2中找到的属性进行组合，例如 ABC和ABD</p><p>然后分别求其闭包,如果包含R的全部属性，即为候选码。如果都包含的话，则都是候选码。（也就是候选码不唯一）</p><hr><h2 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h2><p>(1).R(X,Y,Z) F=(XY→Z)</p><p>首先找出L类属性XY，无N类属性，</p><p>求XY关于F的闭包为XYZ，包含R的全部属性，</p><p>则R的候选码为XY</p><hr><p>(2).R(X,Y,Z) F=(Y→Z，XZ→Y)</p><p>L类属性:X，无N类属性，</p><p>求X关于F的闭包为X，不包含R的全部属性，</p><p>继续找LR类属性:Y、Z</p><p>XY关于F的闭包为XYZ,包含R的全部属性</p><p>XZ关于F的闭包为XYZ,包含R的全部属性</p><p>所以R的候选码为XY和XZ.(R中所有属性X,Y,Z都是主属性)</p><hr><p>(3).R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</p><p>无L类属性，无N类属性，</p><p>继续找LR类属性:X、Y、Z</p><p>X关于F的闭包为XYZ,包含R的全部属性</p><p>Y关于F的闭包为XYZ,包含R的全部属性</p><p>Z关于F的闭包为Z,不包含R的全部属性</p><p>所以R的候选码为X和Y.</p><hr><p>(4).R(X,Y,Z) F=(X→Y，X→Z)</p><p>L类属性:X，无N类属性，</p><p>X关于F的闭包为XYZ,包含R的全部属性</p><p>所以R的候选码为X.</p><hr><p>(5).R(W,X,Y,Z) F=(X→Z,WX→Y)</p><p>L类属性:WX，无N类属性，</p><p>WX关于F的闭包为WXYZ,包含R的全部属性</p><p>所以R的候选码为WX.</p><hr><p>(6).R(W,X,Y,Z) F=(X→Z,X→Y)</p><p>L类属性:X，N类属性:W，</p><p>WX关于F的闭包为WXYZ,包含R的全部属性</p><p>所以R的候选码为WX.</p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
             
         </tags>
       
