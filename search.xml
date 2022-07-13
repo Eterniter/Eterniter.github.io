@@ -50,6 +50,33 @@
     
     
     <entry>
+      <title>Hugo添加Algolia搜索</title>
+      <link href="/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/"/>
+      <url>/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/</url>
+      
+        <content type="html"><![CDATA[<p>本文介绍如何在Hugo LoveIt主题中添加Algolia搜索</p><h2 id="1-在algolia官网注册登录之后创建应用"><a class="markdownIt-Anchor" href="#1-在algolia官网注册登录之后创建应用"></a> 1. 在<a href="https://www.algolia.com/">algolia</a>官网注册登录之后，创建应用</h2><p><img src="https://img-blog.csdnimg.cn/453c1f378f3f408f96574b1010380845.png" alt="在这里插入图片描述" /></p><h2 id="2-选择区域确认应用创建完成然后创建索引"><a class="markdownIt-Anchor" href="#2-选择区域确认应用创建完成然后创建索引"></a> 2. 选择区域，确认应用创建完成，然后创建索引</h2><p><img src="https://img-blog.csdnimg.cn/a9d82dfe468d45ae8d2fb800bfca6ed2.png" alt="在这里插入图片描述" /></p><h2 id="3-运行hugo命令生成public文件夹"><a class="markdownIt-Anchor" href="#3-运行hugo命令生成public文件夹"></a> 3. 运行hugo命令，生成public文件夹</h2><p><img src="https://img-blog.csdnimg.cn/f89e1b1a0ef94c9a8dce76cd24c4b043.png" alt="在这里插入图片描述" /></p><h2 id="4-上传indexjson"><a class="markdownIt-Anchor" href="#4-上传indexjson"></a> 4. 上传index.json</h2><p><img src="https://img-blog.csdnimg.cn/3049be2fcec943bfb45884dab91bd3c9.png" alt="在这里插入图片描述" /></p><h2 id="5-进入api页面"><a class="markdownIt-Anchor" href="#5-进入api页面"></a> 5. 进入<a href="https://www.algolia.com/account/api-keys/">API页面</a></h2><p><img src="https://img-blog.csdnimg.cn/2913b13d249d4d62a1ca4b252d386304.png" alt="在这里插入图片描述" /></p><h2 id="6-配置configtoml"><a class="markdownIt-Anchor" href="#6-配置configtoml"></a> 6. 配置config.toml</h2><p><img src="https://img-blog.csdnimg.cn/80f2f1376bc847a9ad602daa167a9836.png" alt="在这里插入图片描述" /></p><p>将之前的索引名、Application ID、Search-Only API Key依次填入params.search.algolia即可。<br /><img src="https://img-blog.csdnimg.cn/5dce5488efd9485fb00bcacb746242de.png" alt="在这里插入图片描述" /></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hugo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hugo </tag>
+            
+            <tag> algolia </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据库原理之候选码的求解</title>
       <link href="/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/"/>
       <url>/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/</url>
@@ -92,33 +119,6 @@
         <tags>
             
             <tag> database </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hugo添加Algolia搜索</title>
-      <link href="/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/"/>
-      <url>/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/</url>
-      
-        <content type="html"><![CDATA[<p>本文介绍如何在Hugo LoveIt主题中添加Algolia搜索</p><h2 id="1-在algolia官网注册登录之后创建应用"><a class="markdownIt-Anchor" href="#1-在algolia官网注册登录之后创建应用"></a> 1. 在<a href="https://www.algolia.com/">algolia</a>官网注册登录之后，创建应用</h2><p><img src="https://img-blog.csdnimg.cn/453c1f378f3f408f96574b1010380845.png" alt="在这里插入图片描述" /></p><h2 id="2-选择区域确认应用创建完成然后创建索引"><a class="markdownIt-Anchor" href="#2-选择区域确认应用创建完成然后创建索引"></a> 2. 选择区域，确认应用创建完成，然后创建索引</h2><p><img src="https://img-blog.csdnimg.cn/a9d82dfe468d45ae8d2fb800bfca6ed2.png" alt="在这里插入图片描述" /></p><h2 id="3-运行hugo命令生成public文件夹"><a class="markdownIt-Anchor" href="#3-运行hugo命令生成public文件夹"></a> 3. 运行hugo命令，生成public文件夹</h2><p><img src="https://img-blog.csdnimg.cn/f89e1b1a0ef94c9a8dce76cd24c4b043.png" alt="在这里插入图片描述" /></p><h2 id="4-上传indexjson"><a class="markdownIt-Anchor" href="#4-上传indexjson"></a> 4. 上传index.json</h2><p><img src="https://img-blog.csdnimg.cn/3049be2fcec943bfb45884dab91bd3c9.png" alt="在这里插入图片描述" /></p><h2 id="5-进入api页面"><a class="markdownIt-Anchor" href="#5-进入api页面"></a> 5. 进入<a href="https://www.algolia.com/account/api-keys/">API页面</a></h2><p><img src="https://img-blog.csdnimg.cn/2913b13d249d4d62a1ca4b252d386304.png" alt="在这里插入图片描述" /></p><h2 id="6-配置configtoml"><a class="markdownIt-Anchor" href="#6-配置configtoml"></a> 6. 配置config.toml</h2><p><img src="https://img-blog.csdnimg.cn/80f2f1376bc847a9ad602daa167a9836.png" alt="在这里插入图片描述" /></p><p>将之前的索引名、Application ID、Search-Only API Key依次填入params.search.algolia即可。<br /><img src="https://img-blog.csdnimg.cn/5dce5488efd9485fb00bcacb746242de.png" alt="在这里插入图片描述" /></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> hugo </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> hugo </tag>
-            
-            <tag> algolia </tag>
             
         </tags>
       
