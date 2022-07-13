@@ -5,8 +5,8 @@
     
     <entry>
       <title>随机图片API</title>
-      <link href="/essay/images_api/"/>
-      <url>/essay/images_api/</url>
+      <link href="/unclassified/images_api/"/>
+      <url>/unclassified/images_api/</url>
       
         <content type="html"><![CDATA[<h1 id="随机图片api"><a class="markdownIt-Anchor" href="#随机图片api"></a> 随机图片API</h1><ul><li>樱花：<a href="https://www.dmoe.cc/random.php">https://www.dmoe.cc/random.php</a></li><li>晓晴博客：<a href="https://acg.toubiec.cn/random.php">https://acg.toubiec.cn/random.php</a></li><li><a href="https://cdn.seovx.com/d/?mom=302">https://cdn.seovx.com/d/?mom=302</a></li><li>每日bing：<a href="https://api.isoyu.com/bing_images.php">https://api.isoyu.com/bing_images.php</a></li><li>樱道:<a href="https://api.r10086.com/img-api.php?type=%E5%8A%A8%E6%BC%AB%E7%BB%BC%E5%90%8813">https://api.r10086.com/img-api.php?type=动漫综合13</a></li><li>小歪API:<ul><li><a href="https://api.ixiaowai.cn/api/api.php">https://api.ixiaowai.cn/api/api.php</a></li><li><a href="https://api.ixiaowai.cn/mcapi/mcapi.php">https://api.ixiaowai.cn/mcapi/mcapi.php</a></li><li><a href="https://api.ixiaowai.cn/gqapi/gqapi.php">https://api.ixiaowai.cn/gqapi/gqapi.php</a></li></ul></li><li>墨天逸：<a href="https://api.mtyqx.cn/tapi/random.php">https://api.mtyqx.cn/tapi/random.php</a></li><li>岁月小筑：<a href="https://img.xjh.me/random_img.php">https://img.xjh.me/random_img.php</a></li><li>东方Project：<a href="https://img.paulzzh.tech/touhou/random">https://img.paulzzh.tech/touhou/random</a></li><li><a href="https://source.unsplash.com/random">https://source.unsplash.com/random</a></li><li><a href="https://unsplash.it/1600/900?random">https://unsplash.it/1600/900?random</a></li><li><a href="https://source.unsplash.com/user/erondu/1600x900">https://source.unsplash.com/user/erondu/1600x900</a></li><li><a href="https://api.mtyqx.cn/api/random.php">https://api.mtyqx.cn/api/random.php</a></li><li><a href="https://api.yimian.xyz/img?type=moe&amp;size=1920x1080">https://api.yimian.xyz/img?type=moe&amp;size=1920x1080</a></li><li><a href="https://bing.ioliu.cn/v1/rand?w=1920&amp;h=1200">https://bing.ioliu.cn/v1/rand?w=1920&amp;h=1200</a></li></ul>]]></content>
       
@@ -24,8 +24,8 @@
     
     <entry>
       <title>电影信息采集分析系统的设计与实现</title>
-      <link href="/essay/film_system/"/>
-      <url>/essay/film_system/</url>
+      <link href="/unclassified/film_system/"/>
+      <url>/unclassified/film_system/</url>
       
         <content type="html"><![CDATA[<h1 id="电影信息采集分析系统的设计与实现"><a class="markdownIt-Anchor" href="#电影信息采集分析系统的设计与实现"></a> 电影信息采集分析系统的设计与实现</h1><h2 id="计算机科学与技术专业本科毕业设计"><a class="markdownIt-Anchor" href="#计算机科学与技术专业本科毕业设计"></a> 计算机科学与技术专业本科毕业设计</h2><ul><li><a href="#%E8%83%8C%E6%99%AF">背景</a></li><li><a href="#%E9%85%8D%E7%BD%AE">配置</a></li><li><a href="#%E5%AE%89%E8%A3%85">安装</a></li><li><a href="#%E8%BF%90%E8%A1%8C">运行</a></li><li><a href="#%E8%AF%81%E4%B9%A6">证书</a></li></ul><h2 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h2><p>    随着经济全球化进程的不断推进以及电影技术革新、拍摄技术迭代，国内外电影的种类和数量持续增长。虽然这些海量的电影资源为用户提供了丰富的体验，但与此同时由于电影的相关数据种类繁多数据量大，对于用户来说想要寻找感兴趣的电影并对其深入了解需要花费更多的时间，基于此设计了一个电影信息采集分析系统。</p><p>    本系统首先应用爬虫技术采集电影网站的相关数据，在对这些数据进行一系列处理后存入数据库中，从而为后续的分析提供数据支撑。其次对影评数据进行关键词提取，以提取结果为基础通过余弦相似度来计算与之相似的电影从而帮助用户推荐电影。本系统的主要功能包括电影数据采集、影评关键词提取、电影推荐以及数据可视化。通过电影搜索、电影分类、电影榜单、地区偏好来查看电影及其影评用户分析和影评分析，从而帮助用户更加深入地了解电影。</p><p>    根据本系统的分析结果，用户不但能够在较短时间内了解一部电影，而且还能更快地挑选出感兴趣的电影，具有一定的工程实用价值。</p><h2 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h2><ul><li><a href="https://www.python.org/">Python</a> 版本:3.10.4 (tags/v3.10.4:9d38120, Mar 23 2022, 23:13:41) [MSC v.1929 64 bit (AMD64)] on win32<ul><li>所用的库: json、math、hashlib、datetime、queue、collections、time、random、threading、<a href="https://jwt.io/">jwt</a><mark>2.3.0、black</mark>22.3.0、flask<mark>2.1.1、jieba</mark>0.42.1、lxml<mark>4.8.0、pymysql</mark>1.0.2、requests<mark>2.27.1、selenium</mark>4.1.3</li></ul></li><li>JavaScript<ul><li>所用的库:<a href="https://echarts.apache.org/zh/index.html">ECharts</a> 5.2.1、<a href="https://jquery.com/">jQuery</a> 3.5.1、<a href="https://github.com/timdream/wordcloud2.js">wordcloud2.js</a> 1.2.2</li></ul></li><li>HTML</li><li>CSS<ul><li>所用的库: <a href="https://animate.style/">animate.css</a></li></ul></li><li>前端开发框架:<a href="https://v4.bootcss.com/">Bootstrap 4.6</a></li><li>WEB应用框架:<a href="https://flask.net.cn/">Flask</a> 2.1.1</li><li>数据库:<a href="https://www.mysql.com/">MySQL</a> 8.0.28</li><li>浏览器:<a href="https://www.google.cn/intl/zh-CN/chrome/">谷歌浏览器</a> 101.0.4951.64 (正式版本) (64位)</li><li>谷歌浏览器驱动:<a href="http://chromedriver.storage.googleapis.com/index.html">chromedriver</a> 100.0.4896.60</li></ul><p><a href="https://github.com/Eterniter/film_system-me/blob/main/film_system.sql">film_system.sql</a>至少保存了<a href="https://movie.douban.com/top250">豆瓣电影 Top 250</a>的电影信息、对应电影100条影评数据以及对应影评用户信息。可以在后台管理中根据豆瓣URL添加电影。</p><h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2><p><a href="https://github.com/Eterniter/film_system-me">Github地址</a></p><ol><li>安装<a href="#%E9%85%8D%E7%BD%AE">配置</a>。</li><li>运行<a href="https://github.com/Eterniter/film_system-me/blob/main/film_system.sql">film_system.sql</a>创建数据库。</li><li>在<a href="https://github.com/Eterniter/film_system-me/blob/main/mysql_query.py">mysql_query.py</a>文件中配置好连接数据库的信息。</li><li>运行<a href="https://github.com/Eterniter/film_system-me/blob/main/app.py">app.py</a>文件</li><li>如果开启了爬虫，第一次运行需要微信扫码登录获取<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Cookies">Cookie</a>，务必确保谷歌浏览器版本与<a href="http://chromedriver.storage.googleapis.com/index.html">chromedriver</a>版本适配。</li></ol><h2 id="运行"><a class="markdownIt-Anchor" href="#运行"></a> 运行</h2><p><a href="https://www.bilibili.com/video/BV1Hg411R76w?spm_id_from=333.999.0.0">演示视频</a></p><h2 id="证书"><a class="markdownIt-Anchor" href="#证书"></a> 证书</h2><p><a href="LICENSE">MIT</a></p>]]></content>
       
@@ -77,11 +77,11 @@
     
     
     <entry>
-      <title>数据库原理之候选码的求解</title>
-      <link href="/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/"/>
-      <url>/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/</url>
+      <title>数据库原理之范式判断</title>
+      <link href="/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E8%8C%83%E5%BC%8F%E5%88%A4%E6%96%AD/"/>
+      <url>/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E8%8C%83%E5%BC%8F%E5%88%A4%E6%96%AD/</url>
       
-        <content type="html"><![CDATA[<h2 id="属性的分类"><a class="markdownIt-Anchor" href="#属性的分类"></a> 属性的分类</h2><p>R(A1，A2，…，An)和函数依赖集F，属性分4类</p><ul><li>L类：仅出现在F的函数依赖左部的属性</li><li>R类：仅出现在F的函数依赖右部的属性</li><li>N类：在F的函数依赖两边均未出现的属性</li><li>LR类：在F的函数依赖两边均出现的属性</li></ul><hr /><h2 id="预备知识"><a class="markdownIt-Anchor" href="#预备知识"></a> 预备知识</h2><p>对于给定的关系模式R及其函数依赖集F，</p><ol><li>如果X（X∈R）是L类属性，则X必为任一候选码的成员。更进一步，如果X关于F的闭包包含了R的全部属性，则X必为R的唯一候选码。（由此可见一些题目的候选码并不唯一）</li><li>如果X是R类属性，则X不在任何候选码中。</li><li>如果X是N类属性，则X必定在任一候选码中。正因为X是N类属性在F的函数依赖两边都不出现，所以N类和L类组成的函数集关于F的闭包才能包含R的全部属性，即如果N类和L类组成的函数集关于F的闭包包含R的全部属性，则X必为唯一候选码。</li></ol><hr /><h2 id="候选码求解的方法"><a class="markdownIt-Anchor" href="#候选码求解的方法"></a> 候选码求解的方法</h2><ol><li>找出L类属性和N类属性 例如：AB<br />然后判断AB关于F的闭包是否包含R的全部属性，若包含，则AB必为唯一的候选码，后面的都不用看了</li><li>找出LR类属性 例如 C，D</li><li>将1和2中找到的属性进行组合，例如 ABC和ABD<br />然后分别求其闭包,如果包含R的全部属性，即为候选码。如果都包含的话，则都是候选码。（也就是候选码不唯一）</li></ol><hr /><h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2><p>(1)<code>R(X,Y,Z) F=(XY→Z)</code><br />首先找出L类属性XY，无N类属性，<br />求XY关于F的闭包为XYZ，包含R的全部属性，<br />则R的候选码为XY</p><hr /><p>(2)<code>R(X,Y,Z) F=(Y→Z，XZ→Y)</code><br />L类属性:X，无N类属性，<br />求X关于F的闭包为X，不包含R的全部属性，<br />继续找LR类属性:Y、Z<br />XY关于F的闭包为XYZ,包含R的全部属性<br />XZ关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为XY和XZ.(R中所有属性X,Y,Z都是主属性)</p><hr /><p>(3)<code>R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</code><br />无L类属性，无N类属性，<br />继续找LR类属性:X、Y、Z<br />X关于F的闭包为XYZ,包含R的全部属性<br />Y关于F的闭包为XYZ,包含R的全部属性<br />Z关于F的闭包为Z,不包含R的全部属性<br />所以R的候选码为X和Y.</p><hr /><p>(4)<code>R(X,Y,Z) F=(X→Y，X→Z)</code><br />L类属性:X，无N类属性，<br />X关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为X.</p><hr /><p>(5)<code>R(W,X,Y,Z) F=(X→Z,WX→Y)</code><br />L类属性:WX，无N类属性，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p><hr /><p>(6)<code>R(W,X,Y,Z) F=(X→Z,X→Y)</code><br />L类属性:X，N类属性:W，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="判断范式的步骤"><a class="markdownIt-Anchor" href="#判断范式的步骤"></a> 判断范式的步骤</h2><p><img src="https://img-blog.csdnimg.cn/2020040619201566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br /><a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3">如何确定候选键</a></p><hr /><p>判断3NF需要注意,例如:有<code>F=&#123;X→Y,Y→Z，Y→X&#125;</code><br />如果Y属于X，则Y平凡依赖于X，则Z直接依赖于X，满足3NF；<br />如果Y不属于X，则Y非平凡依赖于X，则Z传递依赖于X，不满足3NF.</p><hr /><h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2><p>(1)<code>R(X,Y,Z) F=(XY→Z)</code><br />R的候选码为XY<br />非主属性:Z<br />不存在非主属性对候选键部分函数依赖<br />不存在非主属性传递依赖于候选键<br />函数依赖的左边XY为候选键<br />因此此范式达到BCNF</p><hr /><p>(2)<code>R(X,Y,Z) F=(Y→Z，XZ→Y)</code><br />R的候选码为XY和XZ.<br />非主属性：无 因为非主属性的不存在所以至少达到3NF<br />第一个函数依赖<code>Y→Z</code>的左边Y不是候选键<br />因此此范式达到3NF</p><hr /><p>(3)<code>R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</code><br />R的候选码为X和Y.<br />非主属性:Z<br />不存在非主属性对候选键部分函数依赖<br />由于<code>X→YZ</code> 所以存在<code>Y→X,X→Z</code> 但是该范式却是BCNF，因为判断3NF有两个条件，<code>Y→X,X→Z</code>满足第一个条件，但不满足第二个条件：X不能推出Y.<br />然后三个函数依赖的左边都是候选键<br />因此此范式达到BCNF</p><hr /><p>(4)<code>R(X,Y,Z) F=(X→Y，X→Z)</code><br />R的候选码为X.<br />非主属性:Y、Z<br />两个函数依赖的左边都是候选键<br />因此此范式达到BCNF</p><hr /><p>(5)<code>R(S,T,J) F=&#123;SJ→T,ST→J,T→J&#125;</code><br />R的候选码为SJ和ST<br />非主属性：无 因为非主属性的不存在所以至少达到3NF<br />由<code>T→J</code>左边T不是候选码<br />因此此范式达到3NF</p><hr /><p>(6)<code>R(A,B,C,D) F=&#123;B→C,C→D,D→A&#125;</code><br />R的候选码为B<br />非主属性：A,C,D<br />候选码为单属性，因此不存在非主属性对候选键部分函数依赖<br />由<code>B→C,C→D</code>且C不能推出B可知此范式不满足3NF<br />因此此范式达到2NF</p>]]></content>
       
       
       <categories>
@@ -102,11 +102,11 @@
     
     
     <entry>
-      <title>数据库原理之范式判断</title>
-      <link href="/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E8%8C%83%E5%BC%8F%E5%88%A4%E6%96%AD/"/>
-      <url>/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E8%8C%83%E5%BC%8F%E5%88%A4%E6%96%AD/</url>
+      <title>数据库原理之候选码的求解</title>
+      <link href="/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/"/>
+      <url>/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/</url>
       
-        <content type="html"><![CDATA[<h2 id="判断范式的步骤"><a class="markdownIt-Anchor" href="#判断范式的步骤"></a> 判断范式的步骤</h2><p><img src="https://img-blog.csdnimg.cn/2020040619201566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br /><a href="../%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3">如何确定候选键</a></p><hr /><p>判断3NF需要注意,例如:有<code>F=&#123;X→Y,Y→Z，Y→X&#125;</code><br />如果Y属于X，则Y平凡依赖于X，则Z直接依赖于X，满足3NF；<br />如果Y不属于X，则Y非平凡依赖于X，则Z传递依赖于X，不满足3NF.</p><hr /><h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2><p>(1)<code>R(X,Y,Z) F=(XY→Z)</code><br />R的候选码为XY<br />非主属性:Z<br />不存在非主属性对候选键部分函数依赖<br />不存在非主属性传递依赖于候选键<br />函数依赖的左边XY为候选键<br />因此此范式达到BCNF</p><hr /><p>(2)<code>R(X,Y,Z) F=(Y→Z，XZ→Y)</code><br />R的候选码为XY和XZ.<br />非主属性：无 因为非主属性的不存在所以至少达到3NF<br />第一个函数依赖<code>Y→Z</code>的左边Y不是候选键<br />因此此范式达到3NF</p><hr /><p>(3)<code>R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</code><br />R的候选码为X和Y.<br />非主属性:Z<br />不存在非主属性对候选键部分函数依赖<br />由于<code>X→YZ</code> 所以存在<code>Y→X,X→Z</code> 但是该范式却是BCNF，因为判断3NF有两个条件，<code>Y→X,X→Z</code>满足第一个条件，但不满足第二个条件：X不能推出Y.<br />然后三个函数依赖的左边都是候选键<br />因此此范式达到BCNF</p><hr /><p>(4)<code>R(X,Y,Z) F=(X→Y，X→Z)</code><br />R的候选码为X.<br />非主属性:Y、Z<br />两个函数依赖的左边都是候选键<br />因此此范式达到BCNF</p><hr /><p>(5)<code>R(S,T,J) F=&#123;SJ→T,ST→J,T→J&#125;</code><br />R的候选码为SJ和ST<br />非主属性：无 因为非主属性的不存在所以至少达到3NF<br />由<code>T→J</code>左边T不是候选码<br />因此此范式达到3NF</p><hr /><p>(6)<code>R(A,B,C,D) F=&#123;B→C,C→D,D→A&#125;</code><br />R的候选码为B<br />非主属性：A,C,D<br />候选码为单属性，因此不存在非主属性对候选键部分函数依赖<br />由<code>B→C,C→D</code>且C不能推出B可知此范式不满足3NF<br />因此此范式达到2NF</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="属性的分类"><a class="markdownIt-Anchor" href="#属性的分类"></a> 属性的分类</h2><p>R(A1，A2，…，An)和函数依赖集F，属性分4类</p><ul><li>L类：仅出现在F的函数依赖左部的属性</li><li>R类：仅出现在F的函数依赖右部的属性</li><li>N类：在F的函数依赖两边均未出现的属性</li><li>LR类：在F的函数依赖两边均出现的属性</li></ul><hr /><h2 id="预备知识"><a class="markdownIt-Anchor" href="#预备知识"></a> 预备知识</h2><p>对于给定的关系模式R及其函数依赖集F，</p><ol><li>如果X（X∈R）是L类属性，则X必为任一候选码的成员。更进一步，如果X关于F的闭包包含了R的全部属性，则X必为R的唯一候选码。（由此可见一些题目的候选码并不唯一）</li><li>如果X是R类属性，则X不在任何候选码中。</li><li>如果X是N类属性，则X必定在任一候选码中。正因为X是N类属性在F的函数依赖两边都不出现，所以N类和L类组成的函数集关于F的闭包才能包含R的全部属性，即如果N类和L类组成的函数集关于F的闭包包含R的全部属性，则X必为唯一候选码。</li></ol><hr /><h2 id="候选码求解的方法"><a class="markdownIt-Anchor" href="#候选码求解的方法"></a> 候选码求解的方法</h2><ol><li>找出L类属性和N类属性 例如：AB<br />然后判断AB关于F的闭包是否包含R的全部属性，若包含，则AB必为唯一的候选码，后面的都不用看了</li><li>找出LR类属性 例如 C，D</li><li>将1和2中找到的属性进行组合，例如 ABC和ABD<br />然后分别求其闭包,如果包含R的全部属性，即为候选码。如果都包含的话，则都是候选码。（也就是候选码不唯一）</li></ol><hr /><h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2><p>(1)<code>R(X,Y,Z) F=(XY→Z)</code><br />首先找出L类属性XY，无N类属性，<br />求XY关于F的闭包为XYZ，包含R的全部属性，<br />则R的候选码为XY</p><hr /><p>(2)<code>R(X,Y,Z) F=(Y→Z，XZ→Y)</code><br />L类属性:X，无N类属性，<br />求X关于F的闭包为X，不包含R的全部属性，<br />继续找LR类属性:Y、Z<br />XY关于F的闭包为XYZ,包含R的全部属性<br />XZ关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为XY和XZ.(R中所有属性X,Y,Z都是主属性)</p><hr /><p>(3)<code>R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</code><br />无L类属性，无N类属性，<br />继续找LR类属性:X、Y、Z<br />X关于F的闭包为XYZ,包含R的全部属性<br />Y关于F的闭包为XYZ,包含R的全部属性<br />Z关于F的闭包为Z,不包含R的全部属性<br />所以R的候选码为X和Y.</p><hr /><p>(4)<code>R(X,Y,Z) F=(X→Y，X→Z)</code><br />L类属性:X，无N类属性，<br />X关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为X.</p><hr /><p>(5)<code>R(W,X,Y,Z) F=(X→Z,WX→Y)</code><br />L类属性:WX，无N类属性，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p><hr /><p>(6)<code>R(W,X,Y,Z) F=(X→Z,X→Y)</code><br />L类属性:X，N类属性:W，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p>]]></content>
       
       
       <categories>
@@ -144,6 +144,160 @@
         <tags>
             
             <tag> essay </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Electron failed to install correctly报错解决之道</title>
+      <link href="/unclassified/Electron%20failed%20to%20install%20correctly%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E4%B9%8B%E9%81%93/"/>
+      <url>/unclassified/Electron%20failed%20to%20install%20correctly%E6%8A%A5%E9%94%99%E8%A7%A3%E5%86%B3%E4%B9%8B%E9%81%93/</url>
+      
+        <content type="html"><![CDATA[<p>问题：<br /><img src="https://img-blog.csdnimg.cn/ab4ffa83986d459582ef3f9b7f6d989d.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAzrLOr8-C4YOm,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" /><br />原因：electron可能被墙而无法下载完整</p><p>解决：查看node_modules/electron下是否存在dist目录<br /><img src="https://img-blog.csdnimg.cn/9cc0204aacc34911948a8b64024e2704.png" alt="在这里插入图片描述" /><br />若不存在可以</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><p>然后用cnpm重新安装electron即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Electron </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Electron </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PyQt5 QScrollArea动态添加自动滚到最低端</title>
+      <link href="/pyqt5/PyQt5%20QScrollArea%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%88%B0%E6%9C%80%E4%BD%8E%E7%AB%AF/"/>
+      <url>/pyqt5/PyQt5%20QScrollArea%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%8A%A8%E6%BB%9A%E5%88%B0%E6%9C%80%E4%BD%8E%E7%AB%AF/</url>
+      
+        <content type="html"><![CDATA[<p>解决了一个困扰好久的小问题。<br />QScrollArea动态添加自动滚到最底端效果图：<br /><img src="https://img-blog.csdnimg.cn/77a73f52180a4703a3372e4114daffbc.gif#pic_center" alt="在这里插入图片描述" /><br />实现的关键是<a href="https://doc.qt.io/qt-6/qscrollbar.html#details">QScrollBar的信号</a>:<br />rangeChanged() is emitted when the scroll bar’s range of values has changed.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self.scrollArea.verticalScrollBar().rangeChanged.connect(</span><br><span class="line">            <span class="keyword">lambda</span>: self.scrollArea.verticalScrollBar().setValue(</span><br><span class="line">                self.scrollArea.verticalScrollBar().maximum()</span><br><span class="line">            )</span><br><span class="line">        )</span><br></pre></td></tr></table></figure><p>一旦ScrollBar的range发生改变，就滚动到range的最大值处。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> pyqt5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pyqt5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PyQt5 url设置圆形图片</title>
+      <link href="/pyqt5/PyQt5%20url%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E5%9B%BE%E7%89%87/"/>
+      <url>/pyqt5/PyQt5%20url%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E5%9B%BE%E7%89%87/</url>
+      
+        <content type="html"><![CDATA[<p>因为要仿QQ聊天界面需要用到圆形图片来做头像</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PyQt5.QtWidgets <span class="keyword">import</span> QWidget, QApplication</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtCore <span class="keyword">import</span> Qt, QSize</span><br><span class="line"><span class="keyword">from</span> PyQt5.QtGui <span class="keyword">import</span> QPixmap, QPainter, QBrush</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">My_circle_image</span>(<span class="title class_ inherited__">QWidget</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    从本地文件或URL设置圆形图片</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, url: <span class="built_in">str</span>, size: <span class="built_in">int</span>, mode: <span class="built_in">str</span> = <span class="string">&quot;local&quot;</span>, parent=<span class="literal">None</span></span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__(parent)</span><br><span class="line">        self.resize(size, size)</span><br><span class="line">        <span class="keyword">if</span> mode == <span class="string">&quot;local&quot;</span>:</span><br><span class="line">            self.img = QPixmap(url)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.img = QPixmap()</span><br><span class="line">            img_data = requests.get(url).content</span><br><span class="line">            self.img.loadFromData(img_data)</span><br><span class="line">        self.img = self.img.scaled(</span><br><span class="line">            QSize(size, size), Qt.KeepAspectRatio, Qt.SmoothTransformation</span><br><span class="line">        )</span><br><span class="line">        self.update()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">paintEvent</span>(<span class="params">self, event</span>):</span><br><span class="line">        painter = QPainter(self)</span><br><span class="line">        painter.setRenderHint(QPainter.Antialiasing, <span class="literal">True</span>)</span><br><span class="line">        painter.setPen(Qt.NoPen)</span><br><span class="line">        painter.setBrush(QBrush(self.img))</span><br><span class="line">        painter.drawRoundedRect(self.rect(), self.width() / <span class="number">2</span>, self.height() / <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    app = QApplication(sys.argv)</span><br><span class="line">    window = QWidget()</span><br><span class="line">    widget = My_circle_image(</span><br><span class="line">        <span class="string">r&quot;https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.wxcha.com%2Ffile%2F201812%2F22%2F580277dd05.jpg&amp;refer=http%3A%2F%2Fimg.wxcha.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1630665493&amp;t=5bb0a47c1b77c08442a79e8ab68248d7&quot;</span>,</span><br><span class="line">        <span class="number">80</span>,</span><br><span class="line">        <span class="string">&quot;remote&quot;</span>,</span><br><span class="line">        window,</span><br><span class="line">    )</span><br><span class="line">    window.show()</span><br><span class="line">    sys.exit(app.exec_())</span><br></pre></td></tr></table></figure><p>结果:<br /><img src="https://img-blog.csdnimg.cn/bf8dcbda03b44ccab3aaf84999586cce.png#pic_center" alt="在这里插入图片描述" /></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> pyqt5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pyqt5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PyQt5 安装&amp;VSCODE</title>
+      <link href="/pyqt5/PyQt5%20%E5%AE%89%E8%A3%85&amp;VSCODE/"/>
+      <url>/pyqt5/PyQt5%20%E5%AE%89%E8%A3%85&amp;VSCODE/</url>
+      
+        <content type="html"><![CDATA[<p></p><h1 id="一-pyqt5安装命令"><a class="markdownIt-Anchor" href="#一-pyqt5安装命令"></a> 一、PyQt5安装命令</h1><p>安装PyQt5命令:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5</span><br></pre></td></tr></table></figure><p>安装PyQt5工具命令:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install PyQt5<span class="literal">-tools</span></span><br></pre></td></tr></table></figure><h1 id="二-配置环境变量"><a class="markdownIt-Anchor" href="#二-配置环境变量"></a> 二、配置环境变量</h1><p>找到site-packages目录<br /><img src="https://img-blog.csdnimg.cn/20210705235334196.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />搜索designer.exe<br /><img src="https://img-blog.csdnimg.cn/20210705235420771.png" alt="在这里插入图片描述" /><br />找到designer.exe的文件路径<br /><img src="https://img-blog.csdnimg.cn/20210705235517684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />将该路径加入到系统环境变量path中<br /><img src="https://img-blog.csdnimg.cn/20210705235612823.png" alt="在这里插入图片描述" /></p><h1 id="三-配置vscode"><a class="markdownIt-Anchor" href="#三-配置vscode"></a> 三、配置VSCODE</h1><p>打开Vscode扩展商店安装PYQT Integration<br /><img src="https://img-blog.csdnimg.cn/20210705235821122.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />首选项–&gt;设置–&gt;搜索pyqt，找到Path of QT designer填写designer.exe路径<br /><img src="https://img-blog.csdnimg.cn/20210705235922682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />然后就可以右击以ui为后缀名的文件看到如下选项<br /><img src="https://img-blog.csdnimg.cn/20210706000343578.png" alt="在这里插入图片描述" /></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> pyqt5 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> pyqt5 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>zerotier 无法PING通及其数据库远程连接</title>
+      <link href="/unclassified/zerotier%20%E6%97%A0%E6%B3%95PING%E9%80%9A%E5%8F%8A%E5%85%B6%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"/>
+      <url>/unclassified/zerotier%20%E6%97%A0%E6%B3%95PING%E9%80%9A%E5%8F%8A%E5%85%B6%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="故事背景"><a class="markdownIt-Anchor" href="#故事背景"></a> 故事背景：</h2><p>因为学校决定不开学，所以数据库实验在线上做，而其中有一项即是远程连接其他同学的数据库，本来在学校应该是很简单的操作，在线上对于我们萌新来说难度很大。良久，终于使用zerotier达到目的。</p><h2 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题：</h2><p><strong>1. 加入网络之后，主机直接无法PING通：</strong><br />控制面板-&gt;系统和安全-&gt;Windows Defender防火墙-&gt;高级设置-&gt;入站规则<br /><img src="https://img-blog.csdnimg.cn/20200520184143230.png" alt="在这里插入图片描述" /><br />启用这两个即可.</p><p><strong>2. 相互连接数据库失败：</strong><br />在入站规则那新建规则<br /><img src="https://img-blog.csdnimg.cn/20200520184401786.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br /><img src="https://img-blog.csdnimg.cn/20200520184428769.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />在特定本地端口处填入数据库使用的端口，一般为3306.<br />其余默认<br />名称随意</p><p>如果做完这些连接数据库时显示的是计算机名+不允许，则需要数据库开放远程登录的许可.</p><p>最后，修改防火墙有风险.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+          <category> zerotier </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+            <tag> zerotier </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>直接补码阵列乘法器手工运算</title>
+      <link href="/unclassified/%E7%9B%B4%E6%8E%A5%E8%A1%A5%E7%A0%81%E9%98%B5%E5%88%97%E4%B9%98%E6%B3%95%E5%99%A8%E6%89%8B%E5%B7%A5%E8%BF%90%E7%AE%97/"/>
+      <url>/unclassified/%E7%9B%B4%E6%8E%A5%E8%A1%A5%E7%A0%81%E9%98%B5%E5%88%97%E4%B9%98%E6%B3%95%E5%99%A8%E6%89%8B%E5%B7%A5%E8%BF%90%E7%AE%97/</url>
+      
+        <content type="html"><![CDATA[<h2 id="本文只讲述直接补码阵列乘法器的手工运算方法应付计算机组成原理"><a class="markdownIt-Anchor" href="#本文只讲述直接补码阵列乘法器的手工运算方法应付计算机组成原理"></a> 本文只讲述直接补码阵列乘法器的手工运算方法(应付计算机组成原理)</h2><h2 id="verilog-hdl代码八位"><a class="markdownIt-Anchor" href="#verilog-hdl代码八位"></a> Verilog HDL代码(八位)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">module mul(a,b,z);</span><br><span class="line">    parameter d_width=8;</span><br><span class="line">input [d_width-1:0] a,b;</span><br><span class="line">output [d_width*2-1:0] z;</span><br><span class="line">wire [d_width-1:0] ab0=b[0]?a:8&#x27;b0;</span><br><span class="line">wire [d_width-1:0] ab1=b[1]?a:8&#x27;b0;</span><br><span class="line">wire [d_width-1:0] ab2=b[2]?a:8&#x27;b0;</span><br><span class="line">wire [d_width-1:0] ab3=b[3]?a:8&#x27;b0;</span><br><span class="line">wire [d_width-1:0] ab4=b[4]?a:8&#x27;b0;</span><br><span class="line">wire [d_width-1:0] ab5=b[5]?a:8&#x27;b0;</span><br><span class="line">wire [d_width-1:0] ab6=b[6]?a:8&#x27;b0;</span><br><span class="line">wire [d_width-1:0] ab7=b[7]?a:8&#x27;b0;</span><br><span class="line">assign z=((&#123;8&#x27;b1,~ab0[7],ab0[6:0]&#125;+</span><br><span class="line">               &#123;7&#x27;b0,~ab1[7],ab1[6:0],1&#x27;b0&#125;)+</span><br><span class="line">              (&#123;6&#x27;b0,~ab2[7],ab2[6:0],2&#x27;b0&#125;+</span><br><span class="line">               &#123;5&#x27;b0,~ab3[7],ab3[6:0],3&#x27;b0&#125;)+</span><br><span class="line">              (&#123;4&#x27;b0,~ab4[7],ab4[6:0],4&#x27;b0&#125;+</span><br><span class="line">               &#123;3&#x27;b0,~ab5[7],ab5[6:0],5&#x27;b0&#125;)+</span><br><span class="line">              (&#123;2&#x27;b0,~ab6[7],ab6[6:0],6&#x27;b0&#125;+</span><br><span class="line">               &#123;1&#x27;b1,ab7[7],~ab7[6:0],7&#x27;b0&#125;));</span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure><h2 id="手工计算举例描述"><a class="markdownIt-Anchor" href="#手工计算举例描述"></a> 手工计算举例描述</h2><p>设十进制数x=－15，y=－13，用直接补码阵列乘法器求x*y=?<br />[x]补=1 0001,[y]补=1 0011<br /><img src="https://img-blog.csdnimg.cn/2020010814345184.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzQzNDU3NDYz,size_16,color_FFFFFF,t_70" alt="例题" /><br />手工计算方法为：对于所有行 图上黑色显示的数字即是所乘之数，红色即是所乘之数取反 蓝色即额外添加的1<br />对应图也就是说<br />第一行（1）黑色即数值位乘数值位，红色即数值位乘符号位取反，最左边添1<br />中间几行（234）黑色即数值位乘数值位，红色即数值位乘符号位取反<br />最后一行（5）是用符号位去乘，红色即符号位乘数值位取反，黑色即符号位乘符号位，最左边添1<br />最后结果0011000011最左边的两个00判断溢出<br />最终的结果即为[x*y]补=011000011</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> computer composition principle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> computer composition principle </tag>
             
         </tags>
       
