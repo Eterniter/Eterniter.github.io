@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>Live Variable Analysis and Iterative Solver</title>
+      <link href="/Static%20Program%20Analysis/A1/"/>
+      <url>/Static%20Program%20Analysis/A1/</url>
+      
+        <content type="html"><![CDATA[<h3 id="作业-1活跃变量分析和迭代求解器"><a class="markdownIt-Anchor" href="#作业-1活跃变量分析和迭代求解器"></a> <a href="https://tai-e.pascal-lab.net/pa1.html#_1-%E4%BD%9C%E4%B8%9A%E5%AF%BC%E8%A7%88">作业 1：活跃变量分析和迭代求解器</a></h3><blockquote><p><a href="https://www.bilibili.com/video/BV1b7411K7P4?share_source=copy_web&amp;vd_source=9a56ab548d6454ee9a99f51fea6c7514">南京大学《软件分析》课程</a><br />作业出品：谭添、李樾</p></blockquote><ul><li>为 Java 实现一个活跃变量分析（Live Variable Analysis）。</li><li>实现一个通用的迭代求解器（Iterative Solver），用于求解数据流分析问题，也就是本次作业中的活跃变量分析。</li></ul><h3 id="solverjava"><a class="markdownIt-Anchor" href="#solverjava"></a> Solver.java</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">initializeBackward</span><span class="params">(CFG&lt;Node&gt; cfg, DataflowResult&lt;Node, Fact&gt; result)</span> &#123;</span><br><span class="line">    <span class="comment">// TODO - finish me</span></span><br><span class="line">    result.setInFact(cfg.getExit(),analysis.newBoundaryFact(cfg));</span><br><span class="line">    <span class="keyword">for</span>(Node node:cfg)&#123;</span><br><span class="line">        result.setOutFact(node,analysis.newBoundaryFact(cfg));</span><br><span class="line">        <span class="keyword">if</span>(cfg.isExit(node))</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        result.setInFact(node,analysis.newInitialFact());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="iterativesolverjava"><a class="markdownIt-Anchor" href="#iterativesolverjava"></a> IterativeSolver.java</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doSolveBackward</span><span class="params">(CFG&lt;Node&gt; cfg, DataflowResult&lt;Node, Fact&gt; result)</span> &#123;</span><br><span class="line">    <span class="comment">// TODO - finish me</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">InFactChange</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span> (InFactChange) &#123;</span><br><span class="line">        InFactChange = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (Node node : cfg) &#123;</span><br><span class="line">            <span class="keyword">if</span> (cfg.isExit(node)) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cfg.getOutEdgesOf(node).forEach((edge) -&gt; &#123;</span><br><span class="line">                <span class="type">Node</span> <span class="variable">n</span> <span class="operator">=</span> edge.getTarget();</span><br><span class="line">                analysis.meetInto(result.getOutFact(node), result.getInFact(n));</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">if</span> (analysis.transferNode(node, result.getInFact(node), result.getOutFact(node))) &#123;</span><br><span class="line">                InFactChange = <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="livevariableanalysisjava"><a class="markdownIt-Anchor" href="#livevariableanalysisjava"></a> LiveVariableAnalysis.java</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> SetFact&lt;Var&gt; <span class="title function_">newBoundaryFact</span><span class="params">(CFG&lt;Stmt&gt; cfg)</span> &#123;</span><br><span class="line">    <span class="comment">// TODO - finish me</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SetFact</span>&lt;Var&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> SetFact&lt;Var&gt; <span class="title function_">newInitialFact</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// TODO - finish me</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SetFact</span>&lt;Var&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">meetInto</span><span class="params">(SetFact&lt;Var&gt; fact, SetFact&lt;Var&gt; target)</span> &#123;</span><br><span class="line">    <span class="comment">// TODO - finish me</span></span><br><span class="line">    fact.union(target);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">transferNode</span><span class="params">(Stmt stmt, SetFact&lt;Var&gt; in, SetFact&lt;Var&gt; out)</span> &#123;</span><br><span class="line">    <span class="comment">// TODO - finish me</span></span><br><span class="line">    SetFact&lt;Var&gt; newIn = in.copy();</span><br><span class="line">    in.set(out.copy());</span><br><span class="line">    <span class="keyword">if</span> (stmt.getDef().isPresent())</span><br><span class="line">        <span class="keyword">if</span> (stmt.getDef().get() <span class="keyword">instanceof</span> Var)</span><br><span class="line">            in.remove((Var) stmt.getDef().get());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; stmt.getUses().size(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (stmt.getUses().get(i) <span class="keyword">instanceof</span> Var)</span><br><span class="line">            in.add((Var) stmt.getUses().get(i));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (in.equals(newIn))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Static Program Analysis </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Static Program Analysis </tag>
+            
+            <tag> Data Flow Analysis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test</title>
       <link href="/unclassified/test/"/>
       <url>/unclassified/test/</url>
       
-        <content type="html"><![CDATA[<h1 id="this-is-a-test-page"><a class="markdownIt-Anchor" href="#this-is-a-test-page"></a> This is a test page.</h1>]]></content>
+        <content type="html"><![CDATA[<h1 id="this-is-a-test-page"><a class="markdownIt-Anchor" href="#this-is-a-test-page"></a> This is a test page.</h1><p>!!!</p>]]></content>
       
       
       
@@ -63,6 +90,31 @@
     
     
     <entry>
+      <title>数据库原理之候选码的求解</title>
+      <link href="/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/"/>
+      <url>/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="属性的分类"><a class="markdownIt-Anchor" href="#属性的分类"></a> 属性的分类</h2><p>R(A1，A2，…，An)和函数依赖集F，属性分4类</p><ul><li>L类：仅出现在F的函数依赖左部的属性</li><li>R类：仅出现在F的函数依赖右部的属性</li><li>N类：在F的函数依赖两边均未出现的属性</li><li>LR类：在F的函数依赖两边均出现的属性</li></ul><hr /><h2 id="预备知识"><a class="markdownIt-Anchor" href="#预备知识"></a> 预备知识</h2><p>对于给定的关系模式R及其函数依赖集F，</p><ol><li>如果X（X∈R）是L类属性，则X必为任一候选码的成员。更进一步，如果X关于F的闭包包含了R的全部属性，则X必为R的唯一候选码。（由此可见一些题目的候选码并不唯一）</li><li>如果X是R类属性，则X不在任何候选码中。</li><li>如果X是N类属性，则X必定在任一候选码中。正因为X是N类属性在F的函数依赖两边都不出现，所以N类和L类组成的函数集关于F的闭包才能包含R的全部属性，即如果N类和L类组成的函数集关于F的闭包包含R的全部属性，则X必为唯一候选码。</li></ol><hr /><h2 id="候选码求解的方法"><a class="markdownIt-Anchor" href="#候选码求解的方法"></a> 候选码求解的方法</h2><ol><li>找出L类属性和N类属性 例如：AB<br />然后判断AB关于F的闭包是否包含R的全部属性，若包含，则AB必为唯一的候选码，后面的都不用看了</li><li>找出LR类属性 例如 C，D</li><li>将1和2中找到的属性进行组合，例如 ABC和ABD<br />然后分别求其闭包,如果包含R的全部属性，即为候选码。如果都包含的话，则都是候选码。（也就是候选码不唯一）</li></ol><hr /><h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2><p>(1)<code>R(X,Y,Z) F=(XY→Z)</code><br />首先找出L类属性XY，无N类属性，<br />求XY关于F的闭包为XYZ，包含R的全部属性，<br />则R的候选码为XY</p><hr /><p>(2)<code>R(X,Y,Z) F=(Y→Z，XZ→Y)</code><br />L类属性:X，无N类属性，<br />求X关于F的闭包为X，不包含R的全部属性，<br />继续找LR类属性:Y、Z<br />XY关于F的闭包为XYZ,包含R的全部属性<br />XZ关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为XY和XZ.(R中所有属性X,Y,Z都是主属性)</p><hr /><p>(3)<code>R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</code><br />无L类属性，无N类属性，<br />继续找LR类属性:X、Y、Z<br />X关于F的闭包为XYZ,包含R的全部属性<br />Y关于F的闭包为XYZ,包含R的全部属性<br />Z关于F的闭包为Z,不包含R的全部属性<br />所以R的候选码为X和Y.</p><hr /><p>(4)<code>R(X,Y,Z) F=(X→Y，X→Z)</code><br />L类属性:X，无N类属性，<br />X关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为X.</p><hr /><p>(5)<code>R(W,X,Y,Z) F=(X→Z,WX→Y)</code><br />L类属性:WX，无N类属性，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p><hr /><p>(6)<code>R(W,X,Y,Z) F=(X→Z,X→Y)</code><br />L类属性:X，N类属性:W，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> database </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hugo添加Algolia搜索</title>
       <link href="/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/"/>
       <url>/blog/Hugo%20LoveIt%E6%B7%BB%E5%8A%A0Algolia%E6%90%9C%E7%B4%A2/</url>
@@ -82,31 +134,6 @@
             <tag> hugo </tag>
             
             <tag> algolia </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>数据库原理之候选码的求解</title>
-      <link href="/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/"/>
-      <url>/database/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86%E4%B9%8B%E5%80%99%E9%80%89%E7%A0%81%E7%9A%84%E6%B1%82%E8%A7%A3/</url>
-      
-        <content type="html"><![CDATA[<h2 id="属性的分类"><a class="markdownIt-Anchor" href="#属性的分类"></a> 属性的分类</h2><p>R(A1，A2，…，An)和函数依赖集F，属性分4类</p><ul><li>L类：仅出现在F的函数依赖左部的属性</li><li>R类：仅出现在F的函数依赖右部的属性</li><li>N类：在F的函数依赖两边均未出现的属性</li><li>LR类：在F的函数依赖两边均出现的属性</li></ul><hr /><h2 id="预备知识"><a class="markdownIt-Anchor" href="#预备知识"></a> 预备知识</h2><p>对于给定的关系模式R及其函数依赖集F，</p><ol><li>如果X（X∈R）是L类属性，则X必为任一候选码的成员。更进一步，如果X关于F的闭包包含了R的全部属性，则X必为R的唯一候选码。（由此可见一些题目的候选码并不唯一）</li><li>如果X是R类属性，则X不在任何候选码中。</li><li>如果X是N类属性，则X必定在任一候选码中。正因为X是N类属性在F的函数依赖两边都不出现，所以N类和L类组成的函数集关于F的闭包才能包含R的全部属性，即如果N类和L类组成的函数集关于F的闭包包含R的全部属性，则X必为唯一候选码。</li></ol><hr /><h2 id="候选码求解的方法"><a class="markdownIt-Anchor" href="#候选码求解的方法"></a> 候选码求解的方法</h2><ol><li>找出L类属性和N类属性 例如：AB<br />然后判断AB关于F的闭包是否包含R的全部属性，若包含，则AB必为唯一的候选码，后面的都不用看了</li><li>找出LR类属性 例如 C，D</li><li>将1和2中找到的属性进行组合，例如 ABC和ABD<br />然后分别求其闭包,如果包含R的全部属性，即为候选码。如果都包含的话，则都是候选码。（也就是候选码不唯一）</li></ol><hr /><h2 id="例题"><a class="markdownIt-Anchor" href="#例题"></a> 例题</h2><p>(1)<code>R(X,Y,Z) F=(XY→Z)</code><br />首先找出L类属性XY，无N类属性，<br />求XY关于F的闭包为XYZ，包含R的全部属性，<br />则R的候选码为XY</p><hr /><p>(2)<code>R(X,Y,Z) F=(Y→Z，XZ→Y)</code><br />L类属性:X，无N类属性，<br />求X关于F的闭包为X，不包含R的全部属性，<br />继续找LR类属性:Y、Z<br />XY关于F的闭包为XYZ,包含R的全部属性<br />XZ关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为XY和XZ.(R中所有属性X,Y,Z都是主属性)</p><hr /><p>(3)<code>R(X,Y,Z) F=(Y→Z，Y→X，X→YZ)</code><br />无L类属性，无N类属性，<br />继续找LR类属性:X、Y、Z<br />X关于F的闭包为XYZ,包含R的全部属性<br />Y关于F的闭包为XYZ,包含R的全部属性<br />Z关于F的闭包为Z,不包含R的全部属性<br />所以R的候选码为X和Y.</p><hr /><p>(4)<code>R(X,Y,Z) F=(X→Y，X→Z)</code><br />L类属性:X，无N类属性，<br />X关于F的闭包为XYZ,包含R的全部属性<br />所以R的候选码为X.</p><hr /><p>(5)<code>R(W,X,Y,Z) F=(X→Z,WX→Y)</code><br />L类属性:WX，无N类属性，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p><hr /><p>(6)<code>R(W,X,Y,Z) F=(X→Z,X→Y)</code><br />L类属性:X，N类属性:W，<br />WX关于F的闭包为WXYZ,包含R的全部属性<br />所以R的候选码为WX.</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> database </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> database </tag>
             
         </tags>
       
